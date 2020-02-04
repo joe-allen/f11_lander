@@ -1,0 +1,176 @@
+// ---- Variables
+
+// Common Breakpoints
+$b-small: 550px;
+$b-medium: 768px;
+$b-medium-large: 1024px;
+$b-large: 1200px;
+$b-maxspacing: 1100px;
+$b-minspacing: 360px;
+
+// Typography
+$t-body-font: 'PT Sans Narrow', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$t-heading-font: 'Oswald', 'Gilroy', -apple-system, system-ui, BlinkMacSystemFont, 'Segoe UI', Helvetica, Arial, sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol';
+$t-base-text: 16px;
+$t-line-height: 1.875;
+
+// Colors
+$c-primary: #ffb025;
+$c-accent: #000;
+// $c-accent: #087647;
+$c-black: #202020;
+$c-text: #333333;
+
+// Misc
+$max-content: 1410px;
+$section-title: 75vw;
+
+// ---- Mixins
+
+// Type sizing
+$body-alpha-l: 2.4375rem;
+$body-alpha-s: 1.6667rem;
+
+@mixin body-alpha($media: true, $current: 9999) {
+  @include responsive-type($body-alpha-l, $body-alpha-s, $media, $current);
+}
+
+$body-beta-l: 1.5625rem;
+$body-beta-s: 1.2rem;
+
+@mixin body-beta($media: true, $current: 9999) {
+  @include responsive-type($body-beta-l, $body-beta-s, $media, $current);
+}
+
+$body-gamma-l: 1.25rem;
+$body-gamma-s: 1.0667rem;
+
+@mixin body-gamma($media: true, $current: 9999) {
+  @include responsive-type($body-gamma-l, $body-gamma-s, $media, $current);
+}
+
+$body-delta-l: 1.25rem;
+$body-delta-s: .9333rem;
+
+@mixin body-delta($media: true, $current: 9999) {
+  @include responsive-type($body-delta-l, $body-delta-s, $media, $current);
+}
+
+$body-epsilon-l: 1rem;
+$body-epsilon-s: .9333rem;
+
+@mixin body-epsilon($media: true, $current: 9999) {
+  @include responsive-type($body-epsilon-l, $body-epsilon-s, $media, $current);
+}
+
+$body-zeta-l: .875rem;
+$body-zeta-s: .9333rem;
+
+@mixin body-zeta($media: true, $current: 9999) {
+  @include responsive-type($body-zeta-l, $body-zeta-s, $media, $current);
+}
+
+$body-base-l: 1rem;
+$body-base-s: 1rem;
+
+@mixin body-base($media: true, $current: 9999) {
+  @include responsive-type($body-base-l, $body-base-s, $media, $current);
+}
+
+$body-milli-l: .9375rem;
+$body-milli-s: 1rem;
+
+@mixin body-milli($media: true, $current: 9999) {
+  @include responsive-type($body-milli-l, $body-milli-s, $media, $current);
+}
+
+$body-micro-l: .875rem;
+$body-micro-s: .8rem;
+
+@mixin body-micro($media: true, $current: 9999) {
+  @include responsive-type($body-micro-l, $body-micro-s, $media, $current);
+}
+
+$body-nano-l: .8125rem;
+$body-nano-s: .7333rem;
+
+@mixin body-nano($media: true, $current: 9999) {
+  @include responsive-type($body-nano-l, $body-nano-s, $media, $current);
+}
+
+$body-pico-l: .75rem;
+$body-pico-s: .8rem;
+
+@mixin body-pico($media: true, $current: 9999) {
+  @include responsive-type($body-pico-l, $body-pico-s, $media, $current);
+}
+
+// Spacing
+$vspace-xlarge-max: 135px;
+
+@mixin vspace-xlarge($top: true, $bottom: true, $type: margin, $modifier: 1, $media: true, $current: 9999) {
+  @include locked-spacing($top, $bottom, $type, $modifier, $media, $current, $vspace-xlarge-max, 'vertical', $b-small, 62px);
+}
+
+$vspace-large-max: 100px;
+
+@mixin vspace-large($top: true, $bottom: true, $type: margin, $modifier: 1, $media: true, $current: 9999) {
+  @include locked-spacing($top, $bottom, $type, $modifier, $media, $current, $vspace-large-max, 'vertical', $b-small, 54px);
+}
+
+$vspace-small-max: 80px;
+
+@mixin vspace-small($top: true, $bottom: true, $type: margin, $modifier: 1, $media: true, $current: 9999) {
+  @include locked-spacing($top, $bottom, $type, $modifier, $media, $current, $vspace-small-max, 'vertical', $b-small, 46px);
+}
+
+$vspace-xsmall-max: 65px;
+
+@mixin vspace-xsmall($top: true, $bottom: true, $type: margin, $modifier: 1, $media: true, $current: 9999) {
+  @include locked-spacing($top, $bottom, $type, $modifier, $media, $current, $vspace-xsmall-max, 'vertical', $b-small, 38px);
+}
+
+$hspace-wrapper-max: 120px;
+
+@mixin hspace-wrapper($left: true, $right: true, $type: padding, $modifier: 1, $media: true, $current: 9999) {
+  @include locked-spacing($left, $right, $type, $modifier, $media, $current, $hspace-wrapper-max, 'horizontal', $b-minspacing, 30px);
+}
+
+@mixin vspace-horizontal($top: true, $bottom: true, $type: margin, $modifier: 1, $media: true, $current: 9999) {
+  @include locked-spacing($top, $bottom, $type, $modifier, $media, $current, $hspace-wrapper-max, 'vertical', $b-minspacing, 30px);
+}
+
+@mixin maxwidth-wrapper($media: true, $content: $max-content, $current: 9999) {
+  $hspace-wrapper-tween: strip-unit($hspace-wrapper-max) / strip-unit($b-maxspacing) * 100vw;
+  $hspace-wrapper-min: strip-unit($hspace-wrapper-tween) / 100 * $b-small;
+
+  @if $media {
+    @if $current>$b-maxspacing {
+      max-width: calc(#{$content} + #{$hspace-wrapper-max * 2});
+
+      @media only screen and (max-width: $b-maxspacing) {
+        max-width: calc(#{$content} + #{$hspace-wrapper-tween * 2});
+      }
+
+      @media only screen and (max-width: $b-small) {
+        max-width: calc(#{$content} + #{$hspace-wrapper-min * 2});
+      }
+    } @else if $current>550 {
+      max-width: calc(#{$content} + #{$hspace-wrapper-tween * 2});
+
+      @media only screen and (max-width: $b-small) {
+        max-width: calc(#{$content} + #{$hspace-wrapper-min * 2});
+      }
+    } @else {
+      max-width: calc(#{$content} + #{$hspace-wrapper-min * 2});
+    }
+  } @else {
+    @if $current>strip-unit($b-maxspacing) {
+      max-width: calc(#{$content} + #{$hspace-wrapper-max * 2});
+    } @else if $current>strip-unit($b-small) {
+      max-width: calc(#{$content} + #{$hspace-wrapper-tween * 2});
+    } @else {
+      max-width: calc(#{$content} + #{$hspace-wrapper-min * 2});
+    }
+  }
+}
