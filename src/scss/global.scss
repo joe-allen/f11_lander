@@ -3,6 +3,7 @@
 
 * {
   color: $c-text;
+  font-family: $t-body-font;
 }
 
 body {
@@ -43,6 +44,7 @@ h3 {
 p {
   margin-bottom: 1.5rem;
   margin-top: 0;
+  letter-spacing: 1.3px;
 }
 
 .container {
@@ -65,19 +67,39 @@ p {
   font-weight: 700;
 }
 
+h3:last-child.cta__wrap {
+  background-color: $c-accent;
+  text-decoration: none;
+  text-transform: uppercase;
+  border-radius: 24px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.cta__link {
+  color: #fff;
+  text-decoration: none;
+  text-transform: uppercase;
+  padding: 20px 10px 0;
+  cursor: pointer;
+}
+
 ul {
   list-style: none;
 }
 
 li {
   display: flex;
+  margin-bottom: 1rem;
+  letter-spacing: 1.3px;
 }
 
 .icon {
   display: inline-block;
   width: 1em;
   height: 1em;
-  margin: 0 1em 1em 0;
+  margin: 0 1em 0 0;
   stroke-width: 0;
   stroke: red;
   fill: $c-primary;
@@ -110,6 +132,10 @@ li {
   height: 45vh;
   object-fit: cover;
   object-position: center;
+}
+
+.header__main {
+  margin: 1rem 0;
 }
 
 .header__main img {
@@ -162,8 +188,12 @@ section {
   }
 }
 
-section:nth-child(2){
+section:nth-child(2) {
   background-color: transparent;
+}
+
+section:last-of-type {
+  padding-bottom: 2rem;
 }
 
 .video {

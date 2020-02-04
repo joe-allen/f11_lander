@@ -11,7 +11,7 @@ playBtn.addEventListener('click', () => {
 
 const openPlayer = () => {
   videoContainer.style.display = 'flex';
-  // document.body.style.overflow = 'hidden';
+  document.body.style.overflow = 'hidden';
   player.play();
 }
 
@@ -25,9 +25,3 @@ const closePlayer = () => {
   document.body.style.overflow = 'auto';
   player.pause();
 }
-
-// console.log('player: ', player);
-
-// player.on('play', function() {
-//   console.log('Played the video');
-// });
