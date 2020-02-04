@@ -144,6 +144,7 @@ li {
   left: 50%;
   z-index: 1;
   width: 50%;
+  max-width: 450px;
   height: auto;
   transform: translate(-50%, -50%);
 }
@@ -156,13 +157,13 @@ li {
   left: 0;
 
   video {
-    // width: 100%;
+    width: 100%;
     height: auto;
   }
 }
 
 .header__video img {
-  width: 100%;
+  width: 100vw;
   height: auto;
 }
 
