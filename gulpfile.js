@@ -32,9 +32,32 @@ const scssWatch = (cb) => {
   cb();
 };
 
+// JS
+const babel = require('gulp-babel');
+const minify = require('gulp-minify');
+
+const js = () => {
+  return src('./src/scripts/**/*.js')
+    .pipe(sourcemaps.init())
+    .pipe(babel({
+      presets: ['@babel/env']
+    }))
+    .pipe(minify({
+      mangle: false,
+      noSource: true
+    }))
+    .pipe(sourcemaps.write('./maps'))
+    .pipe(gulp.dest('./src/js/min'))
+};
+
+const jsWatch = (cb) => {
+  watch('./src/scripts/**/*.js', js);
+  cb();
+};
+
 // run eleventy serve
 const render = () => {
   return cp.spawn("npx", ["eleventy", "--serve"], { stdio: "inherit" });
 };
 
-exports.default = series(scssWatch, render);
+exports.default = series(scssWatch, jsWatch, render);

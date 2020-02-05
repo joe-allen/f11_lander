@@ -1,3 +1,6 @@
+import objectFitImages from 'object-fit-images';
+import objectFitVideos from 'object-fit-videos';
+
 const videoContainer = document.querySelector('.video__vimeo');
 const playBtn = document.querySelector('.video__btn-icon--js');
 const closeBtn = videoContainer.querySelector('.video__close');
