@@ -22,8 +22,8 @@ h1 {
   color: $c-primary;
 
   &:first-of-type {
-    margin-top: 0;
-    padding: 30px 0;
+    margin: 0;
+    padding: 30px 0 0;
   }
 }
 
@@ -67,7 +67,14 @@ p {
   font-weight: 700;
 }
 
-h3:last-child.cta__wrap {
+.c-primary {
+  color: $c-primary;
+  border: 2px solid;
+  padding: 10px 0;
+  font-weight: 700;
+}
+
+h3.cta__wrap {
   background-color: $c-accent;
   text-decoration: none;
   text-transform: uppercase;
@@ -77,11 +84,53 @@ h3:last-child.cta__wrap {
   align-items: center;
 }
 
+// .callout_title {
+//   display: flex;
+//   flex-direction: column;
+//   justify-content: center;
+//   align-self: center;
+//   border: 2px solid $c-primary;
+
+//   & > h1 {
+//     margin-top: 1.5rem;
+//   }
+
+//   & > * {
+//     text-align: center;
+//     margin-top: 0;
+//     padding-bottom: 0;
+//   }
+// }
+
+.callout {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  img {
+    align-self: center;
+    margin-bottom: 1.5rem;
+  }
+}
+
+section:last-of-type {
+
+  .callout {
+
+    &:last-of-type {
+
+      img {
+        margin-bottom: 0;
+      }
+    }
+  }
+}
+
 .cta__link {
   color: #fff;
   text-decoration: none;
   text-transform: uppercase;
-  padding: 20px 10px 0;
+  padding: 20px 10px;
   cursor: pointer;
 }
 
@@ -108,7 +157,7 @@ li {
 .header__bg {
   position: relative;
   z-index: 1;
-  height: 0;
+  height: 280px;
   width: 100%;
   padding-bottom: 45vh;
 }
@@ -118,7 +167,7 @@ li {
   position: absolute;
   top: 0;
   left: 0;
-  background-color: rgba(0,0,0,.8);
+  background-color: rgba(0,0,0,.65);
   width: 100%;
   height: 100%;
   z-index: 1;
@@ -145,6 +194,7 @@ li {
   z-index: 1;
   width: 50%;
   max-width: 450px;
+  border-radius: 12px;
   height: auto;
   transform: translate(-50%, -50%);
 }
@@ -157,8 +207,13 @@ li {
   left: 0;
 
   video {
-    width: 100%;
-    height: auto;
+    position: absolute;
+    top: 0;
+    left: 0;
+    object-fit: cover;
+    object-position: center;
+    width: 100vw;
+    height: 100vh;
   }
 }
 
@@ -169,6 +224,7 @@ li {
 
 main {
   position: relative;
+  overflow: hidden;
 }
 
 section {
@@ -183,7 +239,7 @@ section {
     padding-top: 1.5rem;
   }
 
-  & h3:last-child {
+  &:not(:last-of-type) h3:last-child {
     padding-bottom: 1.5rem;
     margin-bottom: 0;
   }
