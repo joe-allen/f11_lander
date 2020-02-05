@@ -9,7 +9,7 @@ module.exports = (function(eleventyConfig) {
       output: "dist",
       input: "src"
     },
-    templateFormats: ["njk", "md", "css", "js"]
+    templateFormats: ["njk", "md", "css"]
   };
 
 });

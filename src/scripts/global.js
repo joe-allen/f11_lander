@@ -1,5 +1,7 @@
-// let objectFitImages = require('object-fit-images');
-// let objectFitVideos = require('object-fit-videos');
+let objectFitImages = require('object-fit-images');
+let objectFitVideos = require('object-fit-videos');
+let a = require('testData');
+
 
 const videoContainer = document.querySelector('.video__vimeo');
 const playBtn = document.querySelector('.video__btn-icon--js');

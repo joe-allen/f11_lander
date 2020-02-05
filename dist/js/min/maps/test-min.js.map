@@ -1,1 +1,0 @@
-{"version":3,"sources":["test.js"],"names":["console","log"],"mappings":"AAAA,aAEAA,QAAQC,IAAI","sourcesContent":["console.log('nice');"],"file":"../test-min.js"}

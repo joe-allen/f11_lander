@@ -1,2 +1,2 @@
-"use strict";console.log("nice");
+"use strict";console.log("nisce");
 //# sourceMappingURL=maps/test-min.js.map
