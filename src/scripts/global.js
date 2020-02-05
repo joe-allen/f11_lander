@@ -1,5 +1,5 @@
-import objectFitImages from 'object-fit-images';
-import objectFitVideos from 'object-fit-videos';
+// let objectFitImages = require('object-fit-images');
+// let objectFitVideos = require('object-fit-videos');
 
 const videoContainer = document.querySelector('.video__vimeo');
 const playBtn = document.querySelector('.video__btn-icon--js');
@@ -28,3 +28,8 @@ const closePlayer = () => {
   document.body.style.overflow = 'auto';
   player.pause();
 }
+
+window.addEventListener('DOMContentLoaded', () => {
+  // objectFitImages();
+  // objectFitVideos();
+});
