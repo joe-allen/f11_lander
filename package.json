@@ -11,21 +11,27 @@
   "license": "ISC",
   "devDependencies": {
     "@11ty/eleventy": "^0.10.0",
-    "@babel/core": "^7.2.0",
-    "@babel/preset-env": "^7.2.0",
-    "autoprefixer": "^9.4.2",
-    "browser-sync": "^2.26.3",
+    "@babel/core": "^7.7.2",
+    "@babel/preset-env": "^7.7.1",
+    "@babel/register": "^7.7.0",
+    "autoprefixer": "^9.7.2",
+    "autosize": "^4.0.2",
+    "babel-loader": "^8.0.6",
+    "concurrently": "^5.0.0",
     "gulp": "^4.0.2",
     "gulp-babel": "^8.0.0",
-    "gulp-concat": "^2.6.1",
     "gulp-minify": "^3.1.0",
     "gulp-postcss": "^8.0.0",
     "gulp-sass": "^4.0.2",
-    "gulp-sass-glob": "^1.0.9",
+    "gulp-sass-glob": "^1.1.0",
     "gulp-sourcemaps": "^2.6.5",
-    "node-sass": "^4.13.0"
+    "node-sass": "^4.13.0",
+    "onchange": "^6.1.0",
+    "vinyl-named": "^1.1.0",
+    "webpack-stream": "^5.2.1"
   },
   "dependencies": {
+    "gsap": "^3.1.1",
     "object-fit-images": "^3.2.4",
     "object-fit-videos": "^1.0.4"
   }

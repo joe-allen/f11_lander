@@ -1,7 +1,6 @@
 let objectFitImages = require('object-fit-images');
 let objectFitVideos = require('object-fit-videos');
-let a = require('testData');
-
+// import a from './test';
 
 const videoContainer = document.querySelector('.video__vimeo');
 const playBtn = document.querySelector('.video__btn-icon--js');
@@ -32,6 +31,14 @@ const closePlayer = () => {
 }
 
 window.addEventListener('DOMContentLoaded', () => {
-  // objectFitImages();
-  // objectFitVideos();
+  objectFitImages();
+  objectFitVideos();
 });
+
+// YOURE RIGHT HERE JOE!
+const logo = document.querySelector('.header__main img');
+
+gsap.to(logo, {
+  duration: 1,
+  x: 100
+})

@@ -1,6 +1,5 @@
 const gulp = require('gulp');
 const { src, dest, series, parallel, watch } = gulp;
-const concat = require('gulp-concat');
 const cp = require("child_process");
 
 // SCSS
@@ -35,19 +34,17 @@ const scssWatch = (cb) => {
 // JS
 const babel = require('gulp-babel');
 const minify = require('gulp-minify');
+const webpackStream = require('webpack-stream');
+const webpack = require('webpack');
+const webpackConfig = require('./webpack.config');
+const named = require('vinyl-named');
 
 const js = () => {
+  const env = process.env.NODE_ENV || 'development';
   return src('./src/scripts/**/*.js')
-    .pipe(sourcemaps.init())
-    .pipe(babel({
-      presets: ['@babel/env']
-    }))
-    .pipe(minify({
-      mangle: false,
-      noSource: true
-    }))
-    .pipe(sourcemaps.write('./maps'))
-    .pipe(gulp.dest('./src/js/min'))
+    .pipe(named())
+    .pipe(webpackStream(webpackConfig(env), webpack))
+    .pipe(dest('./src/js/min'))
 };
 
 const jsWatch = (cb) => {
