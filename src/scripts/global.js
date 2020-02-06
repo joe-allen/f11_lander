@@ -38,7 +38,11 @@ window.addEventListener('DOMContentLoaded', () => {
 // YOURE RIGHT HERE JOE!
 const logo = document.querySelector('.header__main img');
 
-gsap.to(logo, {
+gsap.fromTo(logo, {
+  opacity: 0,
+  y: 50
+}, {
   duration: 1,
-  x: 100
+  y: 0,
+  opacity: 1
 })
