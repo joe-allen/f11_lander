@@ -36,13 +36,22 @@ window.addEventListener('DOMContentLoaded', () => {
 });
 
 // YOURE RIGHT HERE JOE!
-const logo = document.querySelector('.header__main img');
+const cta = document.querySelectorAll('.cta__link');
+const ctaWrap = document.querySelectorAll('.cta__wrap');
+const tl = gsap.timeline({repeat: 25, yoyo: true});
 
-// gsap.fromTo(logo, {
-//   opacity: 0,
-//   y: 50
-// }, {
-//   duration: 1,
-//   y: 0,
-//   opacity: 1
-// })
+tl.to(cta, {
+  duration: 1,
+  y: 0,
+  scale: 1.025,
+  opacity: 1
+});
+
+tl.to(ctaWrap, {
+  duration: 1,
+  y: 0,
+  scale: 1.13,
+  opacity: 1
+}, 0);
+
+tl.yoyo( true );

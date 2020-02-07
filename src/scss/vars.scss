@@ -1,3 +1,4 @@
+
 // ---- Variables
 
 // Common Breakpoints
@@ -214,8 +215,20 @@ $hspace-wrapper-max: 120px;
   */
 
  h1 {
-   font-size: 2em;
+   font-size: 2.5em;
    margin: 0.67em 0;
+ }
+
+ h2 {
+   font-size: 2em;
+ }
+
+ h3 {
+   font-size: 1.75em;
+ }
+
+ p, li {
+   font-size: 1.25em;
  }
 
  /* Grouping content
