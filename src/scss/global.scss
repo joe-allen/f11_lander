@@ -306,6 +306,10 @@ li {
 
   &__logo {
     fill: #fff;
+
+    svg {
+      fill: #fff;
+    }
   }
 }
 
@@ -580,6 +584,10 @@ section:last-of-type {
     &__logo {
       fill: #fff;
       margin-right: auto;
+
+      svg {
+        fill: #fff;
+      }
     }
   }
 

@@ -38,11 +38,11 @@ window.addEventListener('DOMContentLoaded', () => {
 // YOURE RIGHT HERE JOE!
 const cta = document.querySelectorAll('.cta__link');
 const ctaWrap = document.querySelectorAll('.cta__wrap');
-const tl = gsap.timeline({repeat: 25, yoyo: true});
+const tl = gsap.timeline({yoyo: true, repeat: -1});
 
 tl.to(cta, {
   duration: 1,
-  y: 0,
+  y: -1,
   scale: 1.025,
   opacity: 1
 });
